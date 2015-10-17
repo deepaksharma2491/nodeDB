@@ -1,7 +1,15 @@
+var path = require('path');
+var config = require('.././config');
+
+// console.log(config);
 var express = require('express');
 var router = express.Router();
-var mysql      = require('mysql');
+var mysql = require('mysql');
 var connection = mysql.createConnection({
+  host     : config.host,
+  user     : config.user,
+  password : config.password,
+  database : config.database
 });
 connection.connect();
 // connection.query('SELECT 1 + 1 AS solution', function(err, rows, fields) {
