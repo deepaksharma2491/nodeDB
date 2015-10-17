@@ -1,0 +1,37 @@
+<!DOCTYPE html>  
+<html lang="en">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+      console.log($, "hello");
+    </script>
+    <title>
+      random page      
+    </title>
+    <link href="stylesheets/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <script type="text/javascript">
+      // window.onload = function () { 
+      //    $.ajax({
+      //    type: "GET",
+      //    url: "https://snortfootball.wordpress.com/feed/",
+      //    dataType: "xml",
+      //    success: function(xml) {
+      //     console.log(xml, "hello");
+      //    }
+      //    });
+      // }
+      $.ajax({
+        url      : document.location.protocol + '//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&callback=?&q=' + encodeURIComponent("https://snortfootball.wordpress.com/feed/"),
+        dataType : 'json',
+        success  : function (data) {
+          console.log(data, 'jere');
+        }
+      });
+    </script>
+    <div id="feedContainer">
+    <p>asjldasljdlasjdaslj</p>
+    </div>
+  </body>
+</html>
